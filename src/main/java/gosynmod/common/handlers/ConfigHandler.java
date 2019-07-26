@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class ConfigHandler {
 
 	public static Configuration config;
+	public static int DIMENSION_GOSYN_ID = 130;
 
 	public static void init(File file) {
 		config = new Configuration(file);
@@ -25,6 +26,9 @@ public class ConfigHandler {
 		config.addCustomCategoryComment(category, "Set ID's for GUI");
 
 		category = "IDs Dimensions";
+		
+		DIMENSION_GOSYN_ID = config.getInt("DIMENSION_GOSYN_ID", category, DIMENSION_GOSYN_ID,
+				2, 1000, "");
 
 		config.addCustomCategoryComment(category, "Set ID's for Dimensions");
 

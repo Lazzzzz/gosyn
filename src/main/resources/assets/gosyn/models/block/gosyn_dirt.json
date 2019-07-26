@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "gosyn:blocks/gosyn_dirt"
+   }
+}

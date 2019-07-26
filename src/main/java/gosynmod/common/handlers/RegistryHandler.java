@@ -1,14 +1,14 @@
 package gosynmod.common.handlers;
 
 import gosynmod.common.Gosyn;
-import gosynmod.common.Reference;
+import gosynmod.common.commands.CommandTeleportDim;
 import gosynmod.common.init.BlockInit;
+import gosynmod.common.init.DimensionInit;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.event.FOVUpdateEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -18,7 +18,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler {
@@ -60,7 +59,7 @@ public class RegistryHandler {
 		//GameRegistry.registerWorldGenerator(new WorldGenCustomOre(), 0);
 
 		//BiomeInit.registerBiomes();
-		//DimensionInit.registerDimensions();
+		DimensionInit.registerDimensions();
 		//EntityInit.registerEntitites();
 		//ConfigHandler.registerConfig(event);
 
@@ -76,6 +75,6 @@ public class RegistryHandler {
 	}
 
 	public static void serverRegistries(FMLServerStartingEvent event) {
-		//event.registerServerCommand(new CommandTeleportDimension());
+		event.registerServerCommand(new CommandTeleportDim());
 	}
 }
