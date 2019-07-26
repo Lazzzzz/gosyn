@@ -285,7 +285,7 @@ public class ChunkTemplate implements IChunkGenerator {
 		int i1 = z & 15;
 		BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 		for (int j1 = 255; j1 >= 0; --j1) {
-			if (j1 <= rand.nextInt(5)) {
+			if (j1 == 0) {
 				chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
@@ -317,7 +317,7 @@ public class ChunkTemplate implements IChunkGenerator {
 						--j;
 						chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
 						if (j == 0 && iblockstate1.getBlock() == Blocks.SAND) {
-							j = rand.nextInt(4) + Math.max(0, j1 - 63);
+							j = rand.nextInt(4);
 							iblockstate1 = STONE;
 						}
 					}

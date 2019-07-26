@@ -41,6 +41,11 @@ public class DimensionLibraryGosyn extends WorldProvider {
     }
 
     
+    @Override
+    public float getCloudHeight() {
+    	return 100F;
+    }
+    
     
     
 }

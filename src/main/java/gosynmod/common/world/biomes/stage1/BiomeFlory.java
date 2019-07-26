@@ -1,4 +1,4 @@
-package gosynmod.common.world.biomes;
+package gosynmod.common.world.biomes.stage1;
 
 import gosynmod.common.world.biomes.base.BiomeStage1Base;
 

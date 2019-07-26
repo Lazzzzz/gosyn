@@ -2,6 +2,7 @@ package gosynmod.common.handlers;
 
 import gosynmod.common.Gosyn;
 import gosynmod.common.commands.CommandTeleportDim;
+import gosynmod.common.init.BiomeInit;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.init.DimensionInit;
 import gosynmod.common.init.ItemInit;
@@ -58,7 +59,7 @@ public class RegistryHandler {
 
 		//GameRegistry.registerWorldGenerator(new WorldGenCustomOre(), 0);
 
-		//BiomeInit.registerBiomes();
+		BiomeInit.registerBiomes();
 		DimensionInit.registerDimensions();
 		//EntityInit.registerEntitites();
 		//ConfigHandler.registerConfig(event);
