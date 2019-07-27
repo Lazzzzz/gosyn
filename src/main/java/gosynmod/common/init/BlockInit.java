@@ -11,6 +11,7 @@ import gosynmod.common.blocks.BlockMelynchPlanks;
 import gosynmod.common.blocks.BlockMud;
 import gosynmod.common.blocks.BlockRock;
 import gosynmod.common.blocks.plants.BlockSmallCattails;
+import gosynmod.common.blocks.plants.BlockTallCattails;
 import net.minecraft.block.Block;
 
 public class BlockInit {
@@ -28,4 +29,5 @@ public class BlockInit {
 	
 	//PLANTS
 	public static final Block SMALL_CATTAILS = new BlockSmallCattails();
+	public static final Block TALL_CATTAILS  = new BlockTallCattails();
 }

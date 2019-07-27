@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=lower": { "model": "gosyn:tall_cattails_lower" },
+        "half=upper":    { "model": "gosyn:tall_cattails_upper" }
+    }
+}
