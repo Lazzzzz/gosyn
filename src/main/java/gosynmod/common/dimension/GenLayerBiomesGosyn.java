@@ -9,7 +9,18 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerBiomesGosyn extends GenLayer {
 
-	private Biome[] allowedBiomes = {  BiomeInit.FLORY, BiomeInit.DENSE_FOREST, BiomeInit.DARK_FOREST };
+	private Biome[] allowedBiomes = 
+	{ 
+			//STAGE 1
+			BiomeInit.FLORY, BiomeInit.WET_LANDS, 
+			
+			//STAGE 2
+			BiomeInit.DENSE_FOREST,
+			
+			//STAGE 3
+			BiomeInit.DARK_FOREST 
+			
+	};
 
 	public GenLayerBiomesGosyn(long seed) {
 		super(seed);

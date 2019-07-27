@@ -2,6 +2,7 @@ package gosynmod.common.init;
 
 import gosynmod.common.handlers.ConfigHandler;
 import gosynmod.common.world.biomes.stage1.BiomeFlory;
+import gosynmod.common.world.biomes.stage1.BiomeWetlands;
 import gosynmod.common.world.biomes.stage2.BiomeDenseForest;
 import gosynmod.common.world.biomes.stage3.BiomeDarkForest;
 import net.minecraft.world.biome.Biome;
@@ -13,7 +14,8 @@ import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class BiomeInit {
-	public static final Biome FLORY = new BiomeFlory();
+	public static final Biome FLORY 	= new BiomeFlory();
+	public static final Biome WET_LANDS = new BiomeWetlands();
 	
 	public static final Biome DENSE_FOREST = new BiomeDenseForest();
 	
@@ -21,6 +23,7 @@ public class BiomeInit {
 
 	public static void registerBiomes() {
 		initBiomeNoOverworld(FLORY, "Flory", BiomeType.COOL, Type.PLAINS, Type.RARE);
+		initBiomeNoOverworld(WET_LANDS, "Wet Lands", BiomeType.WARM, Type.SWAMP, Type.RARE);
 		
 		initBiomeNoOverworld(DENSE_FOREST, "Dense Forest", BiomeType.WARM, Type.FOREST, Type.RARE);
 	
