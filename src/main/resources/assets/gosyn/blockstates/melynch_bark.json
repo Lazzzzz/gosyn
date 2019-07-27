@@ -1,5 +1,9 @@
 {
-    "variants": {
-        "normal": { "model": "gosyn:melynch_bark" }
+    "variants":
+    {
+        "axis=y":  { "model": "gosyn:melynch_bark" },
+        "axis=z":   { "model": "gosyn:melynch_bark", "x": 90 },
+        "axis=x":   { "model": "gosyn:melynch_bark", "x": 90, "y": 90 },
+        "axis=none": { "model": "gosyn:melynch_bark" }
     }
 }

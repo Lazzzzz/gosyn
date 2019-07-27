@@ -1,8 +1,8 @@
 package gosynmod.common.init;
 
 import gosynmod.common.handlers.ConfigHandler;
-import gosynmod.common.world.biomes.stage1.BiomeFlory;
-import gosynmod.common.world.biomes.stage1.BiomeWetlands;
+import gosynmod.common.world.biomes.stage1.biomeFlory.BiomeFlory;
+import gosynmod.common.world.biomes.stage1.biomeWetLands.BiomeWetlands;
 import gosynmod.common.world.biomes.stage2.BiomeDenseForest;
 import gosynmod.common.world.biomes.stage3.BiomeDarkForest;
 import net.minecraft.world.biome.Biome;
