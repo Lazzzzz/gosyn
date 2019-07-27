@@ -5,6 +5,7 @@ import java.util.Random;
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.init.ItemInit;
+import gosynmod.common.interfaces.IHasModel;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.SoundType;
@@ -24,7 +25,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockTallCattails extends BlockBush {
+public class BlockTallCattails extends BlockBush implements IHasModel{
     protected static final PropertyEnum<BlockDoublePlant.EnumBlockHalf> HALF = BlockDoublePlant.HALF;
 
     public BlockTallCattails() {
@@ -48,6 +49,14 @@ public class BlockTallCattails extends BlockBush {
     @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
+		if 	(  worldIn.getBlockState(pos.west().down()) != Blocks.WATER.getDefaultState()
+				&& worldIn.getBlockState(pos.east().down()) != Blocks.WATER.getDefaultState()
+				&& worldIn.getBlockState(pos.south().down()) != Blocks.WATER.getDefaultState()
+				&& worldIn.getBlockState(pos.north().down()) != Blocks.WATER.getDefaultState()) {
+				return false;
+
+			}
+    	
         return super.canPlaceBlockAt(worldIn, pos) && worldIn.isAirBlock(pos.up());
     }
 
@@ -153,5 +162,10 @@ public class BlockTallCattails extends BlockBush {
         }
         return super.getItemDropped(state, rand, fortune);
     }
+    
+	@Override
+	public void registerModels() {
+		Gosyn.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+	}
 
 }
