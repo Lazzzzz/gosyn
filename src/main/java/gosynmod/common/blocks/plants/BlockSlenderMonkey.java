@@ -18,14 +18,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockSmallCattails extends BlockBush implements IHasModel {
+public class BlockSlenderMonkey extends BlockBush implements IHasModel {
 	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D,
 			0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	private static String type;
 
-	public BlockSmallCattails() {
-		setUnlocalizedName("small_cattails");
-		setRegistryName("small_cattails");
+	public BlockSlenderMonkey() {
+		setUnlocalizedName("slender_monkey");
+		setRegistryName("slender_monkey");
 		setCreativeTab(Gosyn.gosybblocktab);
 		setSoundType(SoundType.PLANT);
 
@@ -46,16 +46,9 @@ public class BlockSmallCattails extends BlockBush implements IHasModel {
 	@Override
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
 		IBlockState soil = worldIn.getBlockState(pos.down());
-	
-		if 	(  worldIn.getBlockState(pos.west().down()) != Blocks.WATER.getDefaultState()
-			&& worldIn.getBlockState(pos.east().down()) != Blocks.WATER.getDefaultState()
-			&& worldIn.getBlockState(pos.south().down()) != Blocks.WATER.getDefaultState()
-			&& worldIn.getBlockState(pos.north().down()) != Blocks.WATER.getDefaultState()) {
-			return false;
 
-		}
-
-		return soil == BlockInit.MUD.getDefaultState();
+		return super.canPlaceBlockAt(worldIn, pos)
+				&& soil.getBlock().canSustainPlant(soil, worldIn, pos.down(), net.minecraft.util.EnumFacing.UP, this);
 	}
 
 	@Override
@@ -70,7 +63,7 @@ public class BlockSmallCattails extends BlockBush implements IHasModel {
 
 	@Override
 	protected boolean canSustainBush(IBlockState state) {
-		return true;
+		return state.getMaterial() == Material.GROUND || state.getMaterial() == Material.GRASS;
 	}
 
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {

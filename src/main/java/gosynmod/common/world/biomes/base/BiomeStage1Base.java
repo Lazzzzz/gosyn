@@ -6,10 +6,10 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 
 public class BiomeStage1Base extends Biome {
 
-	public BiomeStage1Base(String name, float setHeightVariation, float setTemperature) {
+	public BiomeStage1Base(String name, float setHeightVariation, float setTemperature, int waterColor) {
 
 		super(new BiomeProperties(name).setBaseHeight(4F).setHeightVariation(setHeightVariation)
-				.setTemperature(setTemperature).setRainDisabled().setWaterColor(5691638));
+				.setTemperature(setTemperature).setRainDisabled().setWaterColor(waterColor));
 
 		topBlock = BlockInit.GRASS.getDefaultState();
 		fillerBlock = BlockInit.DIRT.getDefaultState();

@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.IPlantable;
 
-public class BlockDirt extends Block implements IHasModel{
+public class BlockDirt extends Block implements IHasModel {
 
 	public BlockDirt() {
 		super(Material.GROUND);
@@ -33,17 +33,17 @@ public class BlockDirt extends Block implements IHasModel{
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 
 	}
-
-	@Override
-	public void registerModels() {
-		Gosyn.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
-		
-	}
 	
 	@Override
 	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction,
 			IPlantable plantable) {
 		return true;
+	}
+	
+	@Override
+	public void registerModels() {
+		Gosyn.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
+
 	}
 
 }

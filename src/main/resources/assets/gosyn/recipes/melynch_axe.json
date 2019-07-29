@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": 
+    [
+        "ZZ",
+        "ZY",
+        " Y"
+    ],
+
+    "key": 
+    {
+        "Z": 
+        {
+            "item": "gosyn:melynch_planks"
+        },
+
+        "Y": 
+        {
+            "item": "gosyn:melynch_stick"
+        }
+    },
+
+    "result": 
+    {
+        "item": "gosyn:melynch_axe"
+    }
+}

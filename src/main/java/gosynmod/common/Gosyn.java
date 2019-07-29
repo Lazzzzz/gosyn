@@ -17,44 +17,40 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
-public class Gosyn 
-{
-	
+@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, dependencies = Gosyn.DEPENDENCIES)
+public class Gosyn {
+
 	public static File config;
-	
+    public static final String LLIBRARY_VERSION = "1.7.9";
+    public static final String DEPENDENCIES = "required-after:llibrary@[" + Gosyn.LLIBRARY_VERSION + ",)";
+
 	@Instance
 	public static Gosyn instance;
-	
+
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMOM_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
+
 	public static final CreativeTabs gosybblocktab = new GosynBlocksTab("gosynBlock");
 	public static final CreativeTabs gosybitemstab = new GosynItemsTab("gosynItems");
 	public static final CreativeTabs gosybtoolstab = new GosynToolsTab("gosynTools");
-	
+
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent event) 
-	{	
+	public static void preInit(FMLPreInitializationEvent event) {
 		RegistryHandler.preInitRegistries(event);
 	}
-	
+
 	@EventHandler
-	public static void init(FMLInitializationEvent event)
-	{
+	public static void init(FMLInitializationEvent event) {
 		RegistryHandler.initRegistries(event);
 	}
-	
+
 	@EventHandler
-	public static void postInit(FMLPostInitializationEvent event) 
-	{
+	public static void postInit(FMLPostInitializationEvent event) {
 		RegistryHandler.postInitRegistries(event);
 	}
-	
+
 	@EventHandler
-	public static void serverInit(FMLServerStartingEvent event)
-	{
+	public static void serverInit(FMLServerStartingEvent event) {
 		RegistryHandler.serverRegistries(event);
 	}
 }
-

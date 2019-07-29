@@ -1,5 +1,7 @@
 package gosynmod.common.blocks;
 
+import java.util.Random;
+
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.init.ItemInit;
@@ -8,26 +10,24 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 
-public class BlockMud extends Block implements IHasModel{
+public class BlockDirtyGrass extends Block implements IHasModel{
 
-	public BlockMud() {
-		super(Material.GROUND);
-		setUnlocalizedName("gosyn_mud");
-		setRegistryName("gosyn_mud");
+	public BlockDirtyGrass() {
+		super(Material.GRASS);
+		setUnlocalizedName("gosyn_dirty_grass");
+		setRegistryName("gosyn_dirty_grass");
 		setCreativeTab(Gosyn.gosybblocktab);
 		
 		
-		this.setHardness(0.5f);
-		this.setResistance(2.5f);	
+		this.setHardness(0.6f);
+		this.setResistance(3f);	
 		this.setHarvestLevel("shovel", 0);
 		this.setSoundType(SoundType.GROUND);
 		
@@ -35,20 +35,25 @@ public class BlockMud extends Block implements IHasModel{
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 
 	}
-
-	@Override
-	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-        entityIn.motionX *= 0.6D;
-        entityIn.motionZ *= 0.6D;
-        super.onEntityWalk(worldIn, pos, entityIn);
+	
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		return BlockInit.DIRT.getItemDropped(BlockInit.DIRT.getDefaultState(), rand, fortune);
 	}
 	
 
+	@Override
+	public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction,
+			IPlantable plantable) {
+		return true;
+	}
+	
 	@Override
 	public void registerModels() {
 		Gosyn.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
-		
+
 	}
 	
+
+
 
 }
