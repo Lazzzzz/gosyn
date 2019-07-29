@@ -1,5 +1,11 @@
 {
     "variants": {
-        "normal": { "model": "gosyn:gosyn_grass" }
+        "normal": [
+            { "model": "gosyn:gosyn_grass" },
+            { "model": "gosyn:gosyn_grass", "y": 90 },
+            { "model": "gosyn:gosyn_grass", "y": 180 },
+            { "model": "gosyn:gosyn_grass", "y": 270 }
+        ]
+    
     }
 }
