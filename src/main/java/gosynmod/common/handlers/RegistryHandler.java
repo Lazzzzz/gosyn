@@ -5,6 +5,7 @@ import gosynmod.common.commands.CommandTeleportDim;
 import gosynmod.common.init.BiomeInit;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.init.DimensionInit;
+import gosynmod.common.init.EntityInit;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
 import net.minecraft.block.Block;
@@ -61,8 +62,8 @@ public class RegistryHandler {
 
 		BiomeInit.registerBiomes();
 		DimensionInit.registerDimensions();
-		//EntityInit.registerEntitites();
-		//ConfigHandler.registerConfig(event);
+		EntityInit.registerEntitites();
+		ConfigHandler.registerConfig(event);
 
 	}
 

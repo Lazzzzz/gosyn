@@ -17,6 +17,7 @@
 
     "result": 
     {
-        "item": "gosyn:melynch_stick"
+        "item": "gosyn:melynch_stick",
+        "count":4
     }
 }
