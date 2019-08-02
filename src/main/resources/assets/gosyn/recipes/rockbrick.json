@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": 
+    [
+        "YY",
+        "YY"
+    ],
+
+    "key": 
+    {
+        "Y": 
+        {
+            "item": "gosyn:gosyn_rock"
+        }
+    },
+
+    "result": 
+    {
+        "item": "gosyn:gosyn_rockbrick",
+        "count": 4
+    }
+}

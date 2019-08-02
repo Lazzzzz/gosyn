@@ -6,15 +6,13 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationAI;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -37,25 +35,38 @@ public class EntityKenpy extends EntityMob implements IAnimatedEntity {
 	}
 
 	protected void initEntityAI() {
-		this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D, 1.0000001E-5F));
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.tasks.addTask(11, new AIKenpyAttack(this, ANIMATION_ATTACK, 1.23000000298023224D, false));
-		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(11, new AIKenpyPinch(this, ANIMATION_PINCH));
+	}
+
+	@Override
+	public Vec3d getPositionEyes(float partialTicks) {
+		// TODO Auto-generated method stub
+		return super.getPositionEyes(partialTicks);
 	}
 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(16.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000298023224D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6);
 	}
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
+		if (inWater && rand.nextInt(20) == 0) {
+			onGround = false;
+			motionX = getLookVec().x * 2f;
+			motionY = 1f - rand.nextFloat();
+			motionZ = getLookVec().z * 2f;
+
+		}
 		if (getAnimation() == ANIMATION_ATTACK && world.isRemote) {
 			spawnParticles();
 		}
@@ -143,6 +154,11 @@ public class EntityKenpy extends EntityMob implements IAnimatedEntity {
 					this.posY + (double) this.height, this.posZ + (this.width / 4) * z * 1.5f, 1D, 1D, 1D);
 		}
 
+	}
+
+	@Override
+	protected boolean isValidLightLevel() {
+		return true;
 	}
 
 }

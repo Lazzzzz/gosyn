@@ -11,8 +11,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenBigTree;
-import net.minecraft.world.gen.feature.WorldGenBirchTree;
 
 public class GenWetLandBigTree extends WorldGenAbstractTree {
 
@@ -25,6 +23,7 @@ public class GenWetLandBigTree extends WorldGenAbstractTree {
 
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos) {
+
 		for (int i = -3; i < 4; i++) {
 			for (int j = -3; j < 4; j++) {
 				if (!worldIn.getBlockState(pos.add(i, -1, j)).isFullBlock()) {

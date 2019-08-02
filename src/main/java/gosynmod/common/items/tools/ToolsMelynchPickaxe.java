@@ -3,7 +3,6 @@ package gosynmod.common.items.tools;
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemPickaxe;
 
 public class ToolsMelynchPickaxe extends ItemPickaxe implements IHasModel

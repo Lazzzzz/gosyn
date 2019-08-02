@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "gosyn:blocks/gosyn_rockbrick",
+        "top": "gosyn:blocks/gosyn_rockbrick",
+        "side": "gosyn:blocks/gosyn_rockbrick"
+    }
+}

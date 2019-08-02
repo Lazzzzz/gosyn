@@ -1,0 +1,19 @@
+{
+    "parent": "gosyn:block/block_2_layer",
+    "textures": 
+    {
+        "particle": "gosyn:blocks/creseol_bark",
+        "down": "gosyn:blocks/creseol_bark",
+        "up": "gosyn:blocks/creseol_bark",
+        "north": "gosyn:blocks/creseol_bark",
+        "east": "gosyn:blocks/creseol_bark",
+        "south": "gosyn:blocks/creseol_bark",
+        "west": "gosyn:blocks/creseol_bark",
+        "down2": "gosyn:blocks/creseol_bark",
+        "up2": "gosyn:blocks/creseol_bark",
+        "north2": "gosyn:blocks/creseol_bark_rune4",
+        "east2": "gosyn:blocks/creseol_bark_rune4",
+        "south2": "gosyn:blocks/creseol_bark_rune4",
+        "west2": "gosyn:blocks/creseol_bark_rune4"
+    }
+}

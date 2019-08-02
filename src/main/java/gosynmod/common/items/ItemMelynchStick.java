@@ -3,7 +3,6 @@ package gosynmod.common.items;
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 public class ItemMelynchStick extends Item implements IHasModel {

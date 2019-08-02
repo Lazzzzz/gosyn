@@ -1,9 +1,7 @@
 package gosynmod.common.dimension;
 
 import gosynmod.common.init.BiomeInit;
-import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeProviderSingle;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
@@ -12,7 +10,9 @@ public class GenLayerBiomesGosyn extends GenLayer {
 	private Biome[] allowedBiomes = 
 	{ 
 			//STAGE 1
-			BiomeInit.FLORY, BiomeInit.WET_LANDS, 
+			BiomeInit.FLORY, 
+			BiomeInit.WET_LANDS,
+			BiomeInit.MELYNCH_FOREST,
 			
 			//STAGE 2
 			BiomeInit.DENSE_FOREST,

@@ -5,7 +5,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.WorldProvider.WorldSleepResult;
 import net.minecraft.world.gen.IChunkGenerator;
 
 public class DimensionLibraryGosyn extends WorldProvider {
@@ -22,7 +21,7 @@ public class DimensionLibraryGosyn extends WorldProvider {
 
 	@Override
 	public IChunkGenerator createChunkGenerator() {
-		return new ChunkTemplate(world, world.rand.nextLong());
+		return new ChunkTemplate(world, this.world.getSeed());
 	}
 
 	@Override

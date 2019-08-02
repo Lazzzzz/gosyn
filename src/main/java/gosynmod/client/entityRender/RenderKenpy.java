@@ -1,10 +1,8 @@
 package gosynmod.client.entityRender;
 
 import gosynmod.client.entityModel.ModelKenpy;
-import gosynmod.common.Gosyn;
 import gosynmod.common.Reference;
 import gosynmod.common.entity.agressive.entityKenpy.EntityKenpy;
-import net.minecraft.client.model.ModelSnowMan;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;

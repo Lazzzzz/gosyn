@@ -2,6 +2,7 @@ package gosynmod.common.world.biomes.stage1.biomeWetLands;
 
 import java.util.Random;
 
+import gosynmod.common.entity.agressive.entityKenpy.EntityKenpy;
 import gosynmod.common.init.BiomeInit;
 import gosynmod.common.world.biomes.base.BiomeStage1Base;
 import net.minecraft.init.Blocks;
@@ -22,6 +23,7 @@ public class BiomeWetlands extends BiomeStage1Base {
 	public BiomeWetlands() {
 		super("Wet Lands", 0.005F, 1F, 1594950);
 		
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityKenpy.class, 5, 2, 6));
 	}
 
 	@Override

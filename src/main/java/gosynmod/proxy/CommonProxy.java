@@ -1,7 +1,6 @@
 package gosynmod.proxy;
 
 import net.minecraft.item.Item;
-import net.minecraft.world.World;
 
 public class CommonProxy {
 

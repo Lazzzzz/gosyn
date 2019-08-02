@@ -3,8 +3,8 @@ package gosynmod.common.dimension;
 import java.util.List;
 import java.util.Random;
 
-import gosynmod.common.init.BiomeInit;
 import gosynmod.common.init.BlockInit;
+import gosynmod.common.world.gen.cave.GosynCaveGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -20,7 +20,6 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.gen.ChunkGeneratorSettings;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
@@ -73,11 +72,8 @@ public class ChunkTemplate implements IChunkGenerator {
 		this.field_185985_d = new NoiseGeneratorOctaves(this.rand, 8);
 		this.heightMap = new double[825];
 		this.field_185999_r = new float[25];
-		// caveGenerator =
-		// net.minecraftforge.event.terraingen.TerrainGen.getModdedMapGen(new
-		// FrozCaveGen(),
-		// net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE);
-		// bigCaveGenerator = new FrozBigCave();
+		caveGenerator = net.minecraftforge.event.terraingen.TerrainGen.getModdedMapGen(new GosynCaveGen(),
+				net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE);
 
 		for (int i = -2; i <= 2; ++i) {
 			for (int j = -2; j <= 2; ++j) {
@@ -89,7 +85,7 @@ public class ChunkTemplate implements IChunkGenerator {
 		net.minecraftforge.event.terraingen.InitNoiseGensEvent.ContextOverworld ctx = new net.minecraftforge.event.terraingen.InitNoiseGensEvent.ContextOverworld(
 				field_185991_j, field_185992_k, field_185993_l, field_185994_m, field_185983_b, field_185984_c,
 				field_185985_d);
-		
+
 		ctx = net.minecraftforge.event.terraingen.TerrainGen.getModdedNoiseGenerators(worldIn, this.rand, ctx);
 		this.field_185991_j = ctx.getLPerlin1();
 		this.field_185992_k = ctx.getLPerlin2();
@@ -106,12 +102,12 @@ public class ChunkTemplate implements IChunkGenerator {
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		this.setBlocksInChunk(x, z, chunkprimer);
 
-		//addIceForestTop(x, z, chunkprimer);
+		// addIceForestTop(x, z, chunkprimer);
 		this.biomesForGeneration = this.world.getBiomeProvider().getBiomes(this.biomesForGeneration, x * 16, z * 16, 16,
 				16);
 		this.replaceBiomeBlocks(x, z, chunkprimer, this.biomesForGeneration);
 
-		// this.bigCaveGenerator.generate(this.world, x, z, chunkprimer);
+		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 

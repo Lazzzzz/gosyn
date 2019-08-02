@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "gosyn:blocks/creseol_grass_top",
+        "down": "gosyn:blocks/gosyn_dirt",
+        "up": "gosyn:blocks/creseol_grass_top",
+        "north": "gosyn:blocks/creseol_grass_side",
+        "east": "gosyn:blocks/creseol_grass_side",
+        "south": "gosyn:blocks/creseol_grass_side",
+        "west": "gosyn:blocks/creseol_grass_side"
+    }
+}

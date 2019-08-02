@@ -3,13 +3,14 @@ package gosynmod.common.init;
 import gosynmod.common.Gosyn;
 import gosynmod.common.Reference;
 import gosynmod.common.entity.agressive.entityKenpy.EntityKenpy;
+import gosynmod.common.handlers.ConfigHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class EntityInit {
 	public static void registerEntitites() {
-		registerEntity("kenpy", EntityKenpy.class, 121, 50, 000000, 000000);
+		registerEntity("kenpy", EntityKenpy.class, ConfigHandler.ENTITY_KENPY_ID, 50, 000000, 000000);
 	}
 
 	private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1,

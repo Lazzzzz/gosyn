@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationAI;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 
 public class AIKenpyPinch extends AnimationAI<EntityKenpy> {
 

@@ -2,7 +2,6 @@ package gosynmod.common.world.biomes.base;
 
 import gosynmod.common.init.BlockInit;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.BiomeProperties;
 
 public class BiomeStage1Base extends Biome {
 

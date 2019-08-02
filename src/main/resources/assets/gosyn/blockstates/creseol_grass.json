@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "gosyn:creseol_grass" },
+            { "model": "gosyn:creseol_grass", "y": 90 },
+            { "model": "gosyn:creseol_grass", "y": 180 },
+            { "model": "gosyn:creseol_grass", "y": 270 }
+        ]
+    
+    }
+}
