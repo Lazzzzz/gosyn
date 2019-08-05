@@ -16,7 +16,7 @@ public class BiomeMelynchForest extends BiomeStage1Base {
 	private GenForestMelynchPlantsDecorator PLANTS = new GenForestMelynchPlantsDecorator();
 
 	public BiomeMelynchForest() {
-		super("Melynch Forest", 0.3f, 1f, 4021417);
+		super("Melynch Forest", 0.1f, 1f, 4021417);
 
 	}
 

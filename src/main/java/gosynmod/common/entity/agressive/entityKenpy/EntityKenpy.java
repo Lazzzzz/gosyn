@@ -44,12 +44,6 @@ public class EntityKenpy extends EntityMob implements IAnimatedEntity {
 	}
 
 	@Override
-	public Vec3d getPositionEyes(float partialTicks) {
-		// TODO Auto-generated method stub
-		return super.getPositionEyes(partialTicks);
-	}
-
-	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(16.0D);

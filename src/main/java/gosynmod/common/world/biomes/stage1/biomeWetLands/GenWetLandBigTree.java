@@ -11,15 +11,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class GenWetLandBigTree extends WorldGenAbstractTree {
+public class GenWetLandBigTree extends WorldGenerator {
 
 	private Block LOG = BlockInit.MELYNCH_BARK;
 	private Block LEAVES = BlockInit.MELYNCH_LEAVES;
-
-	public GenWetLandBigTree() {
-		super(true);
-	}
 
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos) {

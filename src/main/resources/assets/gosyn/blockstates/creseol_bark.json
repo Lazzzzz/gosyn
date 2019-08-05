@@ -1,9 +1,27 @@
 {
-    "variants":
+    "variants": 
     {
-        "axis=y":  { "model": "gosyn:creseol_bark" },
-        "axis=z":   { "model": "gosyn:creseol_bark", "x": 90 },
-        "axis=x":   { "model": "gosyn:creseol_bark", "x": 90, "y": 90 },
-        "axis=none": { "model": "gosyn:creseol_bark" }
+        "axis=y": 
+        {
+            "model": "gosyn:creseol_bark"
+        },
+
+        "axis=z": 
+        {
+            "model": "gosyn:creseol_bark",
+            "x": 90
+        },
+
+        "axis=x": 
+        {
+            "model": "gosyn:creseol_bark",
+            "x": 90,
+            "y": 90
+        },
+
+        "axis=none": 
+        {
+            "model": "gosyn:creseol_bark"
+        }
     }
 }

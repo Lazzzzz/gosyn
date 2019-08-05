@@ -16,6 +16,7 @@ public class GenLayerBiomesGosyn extends GenLayer {
 			
 			//STAGE 2
 			BiomeInit.DENSE_FOREST,
+			BiomeInit.MUSHROOOM,
 			
 			//STAGE 3
 			BiomeInit.DARK_FOREST 

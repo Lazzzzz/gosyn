@@ -3,8 +3,8 @@ package gosynmod.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import gosynmod.common.blocks.deco.BlockCreseolBrick;
 import gosynmod.common.blocks.deco.BlockRockBrick;
+import gosynmod.common.blocks.deco.BlockCreseolBrick.BlockCreseolBrick;
 import gosynmod.common.blocks.deco.stairs.StairCreseolBrick;
 import gosynmod.common.blocks.deco.stairs.StairRockBrick;
 import gosynmod.common.blocks.ground.BlockCreseolGrass;
@@ -13,8 +13,16 @@ import gosynmod.common.blocks.ground.BlockDirtyGrass;
 import gosynmod.common.blocks.ground.BlockGrass;
 import gosynmod.common.blocks.ground.BlockMud;
 import gosynmod.common.blocks.ground.BlockRock;
+import gosynmod.common.blocks.miscs.portal.BlockGosynPortal;
+import gosynmod.common.blocks.miscs.portal.BlockPortalNull;
+import gosynmod.common.blocks.plants.BlockCaveGrass;
+import gosynmod.common.blocks.plants.BlockCreseolFern;
+import gosynmod.common.blocks.plants.BlockCreseolSmallGrass;
 import gosynmod.common.blocks.plants.BlockFallenLeaves;
+import gosynmod.common.blocks.plants.BlockGalangal;
+import gosynmod.common.blocks.plants.BlockGazania;
 import gosynmod.common.blocks.plants.BlockGentian;
+import gosynmod.common.blocks.plants.BlockMagicMushrooom;
 import gosynmod.common.blocks.plants.BlockMoss;
 import gosynmod.common.blocks.plants.BlockMudShortGrass;
 import gosynmod.common.blocks.plants.BlockSlenderMonkey;
@@ -30,6 +38,8 @@ import gosynmod.common.blocks.tree.BlockCreseolRune4;
 import gosynmod.common.blocks.tree.BlockMelynchBark;
 import gosynmod.common.blocks.tree.BlockMelynchLeaves;
 import gosynmod.common.blocks.tree.BlockMelynchPlanks;
+import gosynmod.common.blocks.tree.BlockMushrooomCap;
+import gosynmod.common.blocks.tree.BlockMushrooomStem;
 import net.minecraft.block.Block;
 
 public class BlockInit {
@@ -52,6 +62,8 @@ public class BlockInit {
 	public static final Block CRESEOL_RUNE3	 = new BlockCreseolRune3();
 	public static final Block CRESEOL_RUNE4	 = new BlockCreseolRune4();
 	public static final Block CRESEOL_LEAVES = new BlockCreseolLeaves();
+	public static final Block MUSHROOOM_STEM = new BlockMushrooomStem();
+	public static final Block MUSHROOOM_CAP  = new BlockMushrooomCap();	
 	
 	public static final Block ROCKBRICK		 = new BlockRockBrick();
 	public static final Block CRESEOLBRICK	 = new BlockCreseolBrick();
@@ -65,8 +77,17 @@ public class BlockInit {
 	public static final Block TALL_CATTAILS  = new BlockTallCattails();
 	public static final Block TALL_GRASS	 = new BlockTallGrass();
 	public static final Block GENTIAN		 = new BlockGentian();
+	public static final Block GALANGAL		 = new BlockGalangal();
 	public static final Block FALLEN_LEAVES	 = new BlockFallenLeaves();
 	public static final Block MOSS			 = new BlockMoss();
+	public static final Block CAVEGRASS		 = new BlockCaveGrass();
 	public static final Block MUD_SHORTGRASS = new BlockMudShortGrass();
 	public static final Block SLENDER_MONKEY = new BlockSlenderMonkey();
+	public static final Block GAZANIA		 = new BlockGazania();
+	public static final Block CRESEOL_FERN	 = new BlockCreseolFern();
+	public static final Block CRESEOL_SGRASS = new BlockCreseolSmallGrass();
+	public static final Block MUSHROOOM_MAG  = new BlockMagicMushrooom();
+	
+	public static final Block GOSYN_PORTAL	   = new BlockGosynPortal();
+	public static final Block GOSYN_PORTALNULL = new BlockPortalNull();
 }

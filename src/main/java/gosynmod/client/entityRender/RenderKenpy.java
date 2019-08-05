@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKenpy extends RenderLiving<EntityKenpy>{
-	public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/kenpy");
+	public static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":textures/entity/kenpy.png");
 	
 	public RenderKenpy(RenderManager manager) {
 		super(manager, new ModelKenpy(), 0.5F);

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "gosyn:blocks/moss",
-		"particle": "moss"
+		"particle": "gosyn:blocks/moss"
 	},
 	"elements": [
 		{

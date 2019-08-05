@@ -9,6 +9,7 @@ import net.minecraft.world.chunk.Chunk;
 
 public class BiomeMagicForest extends BiomeStage2Base {
 	private GenMagicForestGroundDecorator GROUND = new GenMagicForestGroundDecorator();
+	private GenMagicForestPlantsDecorator PLANTS = new GenMagicForestPlantsDecorator();
 
 	private GenMagicForestBigTree BIG_TREE = new GenMagicForestBigTree();
 	private GenMagicForestTree TREE = new GenMagicForestTree();
@@ -26,6 +27,7 @@ public class BiomeMagicForest extends BiomeStage2Base {
 				int x = chunk.x * 16 + i + 8;
 				int z = chunk.z * 16 + j + 8;
 				GROUND.generate(worldIn, rand, worldIn.getHeight(new BlockPos(x, 0, z)));
+				PLANTS.generate(worldIn, rand, worldIn.getHeight(new BlockPos(x, 0, z)));
 			}
 		}
 

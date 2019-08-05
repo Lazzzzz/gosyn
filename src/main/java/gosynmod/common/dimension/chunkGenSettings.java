@@ -311,7 +311,7 @@ public class chunkGenSettings
                 this.stretchY = 12.0F;
                 this.biomeDepthWeight = 1.0F;
                 this.biomeDepthOffset = 0.0F;
-                this.biomeScaleWeight = 1.0F;
+                this.biomeScaleWeight = 1F;
                 this.biomeScaleOffset = 0.0F;
                 this.seaLevel = 0;
                 this.useCaves = true;
@@ -330,7 +330,7 @@ public class chunkGenSettings
                 this.lavaLakeChance = 80;
                 this.useLavaOceans = false;
                 this.fixedBiome = -1;
-                this.biomeSize = 4;
+                this.biomeSize = 2;
                 this.riverSize = 4;
                 this.dirtSize = 33;
                 this.dirtCount = 10;

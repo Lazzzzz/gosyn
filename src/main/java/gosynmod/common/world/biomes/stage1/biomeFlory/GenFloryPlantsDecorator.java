@@ -15,8 +15,8 @@ public class GenFloryPlantsDecorator extends WorldGenerator {
 				|| worldIn.getBlockState(pos.down()) == BlockInit.DIRTY_GRASS.getDefaultState()) {
 			if (rand.nextInt(7) == 0) {
 
-				int i = rand.nextInt(10);
-				if (i > 3)
+				int i = rand.nextInt(12);
+				if (i > 5)
 					worldIn.setBlockState(pos, BlockInit.TALL_GRASS.getDefaultState());
 				if (i == 0)
 					worldIn.setBlockState(pos, BlockInit.GENTIAN.getDefaultState());
@@ -24,6 +24,10 @@ public class GenFloryPlantsDecorator extends WorldGenerator {
 					worldIn.setBlockState(pos, BlockInit.SLENDER_MONKEY.getDefaultState());
 				if (i == 3)
 					worldIn.setBlockState(pos, BlockInit.FALLEN_LEAVES.getDefaultState());
+				if (i == 4)
+					worldIn.setBlockState(pos, BlockInit.GALANGAL.getDefaultState());
+				if (i == 5)
+					worldIn.setBlockState(pos, BlockInit.GAZANIA.getDefaultState());
 			}
 		}
 		return true;

@@ -1,5 +1,31 @@
 {
-    "variants": {
-        "normal": { "model": "gosyn:creseol_brick" }
+    "variants": 
+    {
+        "variant=variant_0": 
+        {
+            "model": "gosyn:creseol_brick_0"
+        },
+
+        "variant=variant_1": 
+        {
+            "model": "gosyn:creseol_brick_1"
+        },
+                "variant=variant_2": 
+        {
+            "model": "gosyn:creseol_brick_2"
+        },
+                "variant=variant_3": 
+        {
+            "model": "gosyn:creseol_brick_3"
+        },
+                "variant=variant_4": 
+        {
+            "model": "gosyn:creseol_brick_4"
+        },
+                "variant=variant_5": 
+        {
+            "model": "gosyn:creseol_brick_5"
+        }
+        
     }
 }

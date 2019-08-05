@@ -1,4 +1,4 @@
-package gosynmod.common.blocks.deco;
+package gosynmod.common.blocks.tree;
 
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.BlockInit;
@@ -7,26 +7,26 @@ import gosynmod.common.interfaces.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-public class BlockCreseolBrick extends Block implements IHasModel{
+public class BlockMushrooomCap extends Block implements IHasModel{
 
-	public BlockCreseolBrick() {
-		super(Material.ROCK);
-		setUnlocalizedName("creseol_brick");
-		setRegistryName("creseol_brick");
+	public BlockMushrooomCap() {
+		super(Material.WOOD);
+		setUnlocalizedName("mushrooom_cap");
+		setRegistryName("mushrooom_cap");
 		setCreativeTab(Gosyn.gosybblocktab);
+		Blocks.FIRE.setFireInfo(this, 5, 5);
 		
-		
-		this.setHardness(1.5f);
-		this.setResistance(30f);	
-		this.setHarvestLevel("pickaxe", 0);
-		this.setSoundType(SoundType.STONE);
+		this.setHardness(2f);
+		this.setResistance(15f);	
+		this.setHarvestLevel("axe", 0);
+		this.setSoundType(SoundType.WOOD);
 		
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
-
 	}
 
 	@Override

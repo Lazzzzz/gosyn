@@ -16,7 +16,7 @@ import net.minecraft.world.gen.MapGenBase;
 
 public class GosynCaveGen extends MapGenBase
 {
-    protected static final IBlockState BLK_LAVA = Blocks.LAVA.getDefaultState();
+    protected static final IBlockState BLK_LAVA = Blocks.AIR.getDefaultState();
     protected static final IBlockState BLK_AIR = Blocks.AIR.getDefaultState();
     protected static final IBlockState BLK_SANDSTONE = Blocks.SANDSTONE.getDefaultState();
     protected static final IBlockState BLK_RED_SANDSTONE = Blocks.RED_SANDSTONE.getDefaultState();
