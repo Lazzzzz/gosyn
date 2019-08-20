@@ -4,8 +4,6 @@ import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemSword;
 import net.minecraft.item.ItemTool;
 
 public class ToolsGosynAxe extends ItemTool{

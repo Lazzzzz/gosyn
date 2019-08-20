@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import gosynmod.common.init.BlockInit;
+import gosynmod.common.util.jar.getFloorHeight;
 import gosynmod.common.world.gen.cave.GosynCaveGen;
+import gosynmod.common.world.gen.stage2.structures.GenSpiritDungeon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;

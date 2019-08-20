@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=lower": { "model": "gosyn:double_tall_grass_lower" },
+        "half=upper":    { "model": "gosyn:double_tall_grass_upper" }
+    }
+}

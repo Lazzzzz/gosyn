@@ -4,6 +4,7 @@ import java.util.Random;
 
 import gosynmod.common.init.BlockInit;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -19,6 +20,8 @@ public class GenForestMelynchSmallTree extends WorldGenerator {
 
 		int size = rand.nextInt(4) + 5;
 
+		if (worldIn.getBlockState(position.down()).getMaterial() != Material.GROUND
+				&& worldIn.getBlockState(position.down()).getMaterial() != Material.GRASS) return false;
 		
 		for (int i = -1; i < 2; i++) {
 			for (int j = -1; j < 2; j++) {

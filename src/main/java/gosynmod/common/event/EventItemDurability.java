@@ -10,9 +10,7 @@ import gosynmod.common.items.tools.base.ToolsGosynShovel;
 import gosynmod.common.items.tools.base.ToolsGosynSword;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
@@ -94,7 +92,6 @@ public class EventItemDurability {
 			}
 
 		}
-
 	}
 	
 	private static void toolsDurabilityOffHand(EntityPlayer player) {

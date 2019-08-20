@@ -6,6 +6,7 @@ import java.util.List;
 import gosynmod.common.world.biomes.stage1.biomeFlory.BiomeFlory;
 import gosynmod.common.world.biomes.stage1.biomeMelynchForest.BiomeMelynchForest;
 import gosynmod.common.world.biomes.stage1.biomeWetLands.BiomeWetlands;
+import gosynmod.common.world.biomes.stage2.CorruptedGrave.BiomeCorruptedGrave;
 import gosynmod.common.world.biomes.stage2.MagicForest.BiomeMagicForest;
 import gosynmod.common.world.biomes.stage2.Mushrooom.BiomeMushrooom;
 import gosynmod.common.world.biomes.stage3.BiomeDarkForest;
@@ -22,8 +23,9 @@ public class BiomeInit {
 	public static final Biome WET_LANDS 	 = new BiomeWetlands();
 	public static final Biome MELYNCH_FOREST = new BiomeMelynchForest();
 	
-	public static final Biome DENSE_FOREST = new BiomeMagicForest();
+	public static final Biome MAGIC_FOREST = new BiomeMagicForest();
 	public static final Biome MUSHROOOM    = new BiomeMushrooom();
+	public static final Biome CORRUPTED	   = new BiomeCorruptedGrave();
 	
 	public static final Biome DARK_FOREST = new BiomeDarkForest();
 
@@ -34,8 +36,9 @@ public class BiomeInit {
 		initBiomeNoOverworld(WET_LANDS, "Wet Lands", BiomeType.WARM, Type.SWAMP, Type.RARE);
 		initBiomeNoOverworld(MELYNCH_FOREST, "Melynch Forest", BiomeType.WARM, Type.FOREST, Type.RARE);
 		
-		initBiomeNoOverworld(DENSE_FOREST, "Magic Forest", BiomeType.WARM, Type.FOREST, Type.RARE);
+		initBiomeNoOverworld(MAGIC_FOREST, "Magic Forest", BiomeType.WARM, Type.FOREST, Type.RARE);
 		initBiomeNoOverworld(MUSHROOOM, "Mushrooom", BiomeType.COOL, Type.FOREST, Type.RARE);
+		initBiomeNoOverworld(CORRUPTED, "Corrupted Grave", BiomeType.COOL, Type.PLAINS, Type.RARE);
 	
 		initBiomeNoOverworld(DARK_FOREST, "Dark Forest", BiomeType.WARM, Type.FOREST, Type.RARE);
 		

@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,7 +20,8 @@ public class GenMagicForestBigTree extends WorldGenerator {
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
 		this.size = rand.nextInt(3) + 9;
-
+		if (worldIn.getBlockState(position.down()).getMaterial() != Material.GROUND
+				&& worldIn.getBlockState(position.down()).getMaterial() != Material.GRASS) return false;
 		for (int i = -2; i < 3; i++) {
 			for (int j = -2; j < 3; j++) {
 				if (!worldIn.getBlockState(position.add(i, -1, j)).isFullBlock()) {

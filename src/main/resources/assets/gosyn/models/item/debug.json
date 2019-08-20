@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 {
-   "parent":"item/handheld",
-   "textures":{
-      "layer0":"gosyn:items/melynch_stick"
-   }
-=======
-{
-   "parent":"item/handheld",
-   "textures":{
-      "layer0":"gosyn:items/debug"
-   }
->>>>>>> 1452b03a2ec8e835306b22578a15bf0240316bcf
+    "parent": "item/handheld",
+    "textures": 
+    {
+        "layer0": "gosyn:items/debug"
+    }
 }

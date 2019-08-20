@@ -13,6 +13,7 @@ public class ConfigHandler {
 	
 	public static int ENTITY_KENPY_ID = 121;
 	public static int ENTITY_VORTEX_ID = 122;
+	public static int ENTITY_SPIRIT_ID = 123;
 	
 	public static int DIMENSION_GOSYN_ID = 130;
 	
@@ -29,6 +30,7 @@ public class ConfigHandler {
 
 		ENTITY_KENPY_ID  = config.getInt("ENTITY_KENPY_ID", category, ENTITY_KENPY_ID, 2, 1000, "");	
 		ENTITY_VORTEX_ID = config.getInt("ENTITY_VORTEX_ID", category, ENTITY_VORTEX_ID, 2, 1000, "");	
+		ENTITY_SPIRIT_ID = config.getInt("ENTITY_SPIRIT_ID", category, ENTITY_SPIRIT_ID, 2, 1000, "");
 		
 		config.addCustomCategoryComment(category, "Set ID's for ENTITY");
 
@@ -46,7 +48,7 @@ public class ConfigHandler {
 		category = "Misc";
 
 		MAX_DAMAGE_TOOLS = config.getInt("MAX_DAMAGE_TOOLS", category, MAX_DAMAGE_TOOLS,
-				0, 1000, "");
+				1, 1000, "");
 		
 		config.addCustomCategoryComment(category, "Misc");
 		config.save();

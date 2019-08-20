@@ -4,6 +4,7 @@ import java.io.File;
 
 import gosynmod.client.creativeTabs.GosynBlocksTab;
 import gosynmod.client.creativeTabs.GosynItemsTab;
+import gosynmod.client.creativeTabs.GosynPlantsTab;
 import gosynmod.client.creativeTabs.GosynToolsTab;
 import gosynmod.common.handlers.RegistryHandler;
 import gosynmod.proxy.CommonProxy;
@@ -30,9 +31,10 @@ public class Gosyn {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMOM_PROXY_CLASS)
 	public static CommonProxy proxy;
 
-	public static final CreativeTabs gosybblocktab = new GosynBlocksTab("gosynBlock");
-	public static final CreativeTabs gosybitemstab = new GosynItemsTab("gosynItems");
-	public static final CreativeTabs gosybtoolstab = new GosynToolsTab("gosynTools");
+	public static final CreativeTabs gosybblocktab  = new GosynBlocksTab("gosynBlock");
+	public static final CreativeTabs gosybitemstab  = new GosynItemsTab("gosynItems");
+	public static final CreativeTabs gosybtoolstab  = new GosynToolsTab("gosynTools");
+	public static final CreativeTabs gosynplantstab = new GosynPlantsTab("gosynPlants");
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {

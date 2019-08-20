@@ -1,7 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "spirit_door"
+		"2": "gosyn:blocks/tiles/spirit_door",
+		"particle": "gosyn:blocks/tiles/spirit_door"
 	},
 	"elements": [
 		{

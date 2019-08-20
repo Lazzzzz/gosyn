@@ -12,14 +12,14 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class GenMushrooomMedium extends WorldGenerator {
 
 	private IBlockState STEM = BlockInit.MUSHROOOM_STEM.getDefaultState();
-	private IBlockState CUP = BlockInit.MUSHROOOM_CAP.getDefaultState();
 
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
+		IBlockState CUP = BlockInit.MUSHROOOM_CAP.getStateFromMeta(rand.nextInt(4));
 		int size = rand.nextInt(4) + 7;
 
 		if (worldIn.getBlockState(position.down()) != BlockInit.CRESEOL_GRASS.getDefaultState()
-				|| worldIn.getBlockState(position.down()) != BlockInit.ROCK.getDefaultState()) {
+				&& worldIn.getBlockState(position.down()) != BlockInit.ROCK.getDefaultState()) {
 			return false;
 		}
 
@@ -41,11 +41,11 @@ public class GenMushrooomMedium extends WorldGenerator {
 			}
 		}
 
-		generateStem(worldIn, rand, position, size);
+		generateStem(worldIn, rand, position, size, CUP);
 		return false;
 	}
 
-	private void generateStem(World worldIn, Random rand, BlockPos position, int size) {
+	private void generateStem(World worldIn, Random rand, BlockPos position, int size, IBlockState CUP) {
 		int dirx = rand.nextInt(3) - 1;
 		int dirz = rand.nextInt(3) - 1;
 		int size1 = rand.nextInt(3) + 2;

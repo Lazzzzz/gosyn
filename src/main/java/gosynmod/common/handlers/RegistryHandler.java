@@ -1,6 +1,7 @@
 package gosynmod.common.handlers;
 
-import gosynmod.common.Gosyn;
+import gosynmod.client.render.block.RenderMagicalMushrooom;
+import gosynmod.common.blocks.tileEntity.magicalMushrooom.TileEntityMagicalMushroooms;
 import gosynmod.common.commands.CommandTeleportDim;
 import gosynmod.common.init.BiomeInit;
 import gosynmod.common.init.BlockInit;
@@ -13,13 +14,13 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler {
@@ -33,6 +34,7 @@ public class RegistryHandler {
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
 		TileEntityHandler.registerTileEntities();
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMagicalMushroooms.class, new RenderMagicalMushrooom());
 
 	}
 
@@ -58,7 +60,7 @@ public class RegistryHandler {
 
 	public static void preInitRegistries(FMLPreInitializationEvent event) {
 
-		//GameRegistry.registerWorldGenerator(new WorldGenCustomOre(), 0);
+		//GameRegistry.registerWorldGenerator(new GenStructureStage2(), 0);
 
 		BiomeInit.registerBiomes();
 		DimensionInit.registerDimensions();
@@ -68,7 +70,7 @@ public class RegistryHandler {
 	}
 
 	public static void initRegistries(FMLInitializationEvent event) {
-		NetworkRegistry.INSTANCE.registerGuiHandler(Gosyn.instance, new GuiHandler());
+		//NetworkRegistry.INSTANCE.registerGuiHandler(Gosyn.instance, new GuiHandler());
 		//OreDictionnarCompat.registerOres();
 
 	}

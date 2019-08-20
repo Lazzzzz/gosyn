@@ -2,24 +2,20 @@ package gosynmod.common.world.biomes.stage2.Mushrooom;
 
 import java.util.Random;
 
-import com.sun.jna.platform.win32.WinDef.WPARAM;
-
 import gosynmod.common.init.BlockInit;
-import io.netty.util.internal.MathUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class GenMushrooomGiant extends WorldGenerator {
 
 	private IBlockState STEM = BlockInit.MUSHROOOM_STEM.getDefaultState();
-	private IBlockState CUP = BlockInit.MUSHROOOM_CAP.getDefaultState();
 
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
+		IBlockState CUP = BlockInit.MUSHROOOM_CAP.getStateFromMeta(rand.nextInt(4));
 		int size = rand.nextInt(6) + 15;
 		
 		for (int i = -3; i < 4; i++) {
@@ -50,12 +46,12 @@ public class GenMushrooomGiant extends WorldGenerator {
 			}
 		}
 		
-		generateStem(worldIn, rand, position, size);
+		generateStem(worldIn, rand, position, size, CUP);
 
 		return false;
 	}
 
-	private void generateStem(World worldIn, Random rand, BlockPos position, int size) {
+	private void generateStem(World worldIn, Random rand, BlockPos position, int size, IBlockState CUP) {
 		for (int i = 0; i < size; i++) {
 			worldIn.setBlockState(position.add(-1, i, 0), STEM);
 			worldIn.setBlockState(position.add(1, i, 0), STEM);
@@ -119,18 +115,18 @@ public class GenMushrooomGiant extends WorldGenerator {
 
 		// CAP
 
-		generateCap(worldIn, rand, position.up(size));
+		generateCap(worldIn, rand, position.up(size), CUP);
 
 	}
 
-	private void generateVine(World worldIn, Random rand, BlockPos position) {
+	private void generateVine(World worldIn, Random rand, BlockPos position, IBlockState CUP) {
 		for (int i = 1; i < rand.nextInt(10) + 3; i++) {
 			worldIn.setBlockState(position.down(i), CUP);
 
 		}
 	}
 
-	private void generateCap(World worldIn, Random rand, BlockPos position) {
+	private void generateCap(World worldIn, Random rand, BlockPos position, IBlockState CUP) {
 		generateCapLayer(worldIn, rand, position.up(1), CUP, 3);
 		generateCapLayer(worldIn, rand, position, CUP, 5);
 		int size1 = rand.nextInt(2) + 2;
@@ -154,7 +150,7 @@ public class GenMushrooomGiant extends WorldGenerator {
 					 && worldIn.getBlockState(position.add(i, -size2, j).west()) == Blocks.AIR.getDefaultState())
 
 						if (rand.nextInt(5) == 0)
-							generateVine(worldIn, rand, position.add(i, -size2 + 1, j));
+							generateVine(worldIn, rand, position.add(i, -size2 + 1, j), CUP);
 				}
 
 			}

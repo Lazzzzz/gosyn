@@ -12,14 +12,15 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class GenMushrooom extends WorldGenAbstractTree {
 	
 	public static final IBlockState LOG   = BlockInit.MUSHROOOM_STEM.getDefaultState();
-	public static final IBlockState LEAVE = BlockInit.MUSHROOOM_CAP.getDefaultState();
 	
 	public GenMushrooom() {
 		super(false);
+		
 	}
 
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
+		IBlockState LEAVE = BlockInit.MUSHROOOM_CAP.getStateFromMeta(rand.nextInt(4));
 		int x = pos.getX();
 		int y = pos.getY() - 1;
 		int z = pos.getZ();

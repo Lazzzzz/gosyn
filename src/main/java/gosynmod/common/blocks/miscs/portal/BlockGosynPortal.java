@@ -1,7 +1,5 @@
 package gosynmod.common.blocks.miscs.portal;
 
-import java.util.Random;
-
 import javax.annotation.Nullable;
 
 import gosynmod.common.handlers.ConfigHandler;

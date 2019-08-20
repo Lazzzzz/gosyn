@@ -19,14 +19,17 @@ public class GenForestMelynchBigTree extends WorldGenerator {
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
 		this.size = rand.nextInt(4) + 8;
-		
-		for (int i = -2; i < 2; i++) {
-			for (int j = -2; j < 2; j++) {
-				if (!worldIn.getBlockState(position.add(i, -1, j)).isFullBlock()) {
-					return false;
+
+		if (worldIn.getBlockState(position.down()).getMaterial() != Material.GROUND
+				&& worldIn.getBlockState(position.down()).getMaterial() != Material.GRASS) return false;
+
+			for (int i = -2; i < 2; i++) {
+				for (int j = -2; j < 2; j++) {
+					if (!worldIn.getBlockState(position.add(i, -1, j)).isFullBlock()) {
+						return false;
+					}
 				}
 			}
-		}
 
 		for (int i = -2; i < 2; i++) {
 			for (int j = -2; j < 2; j++) {
@@ -37,7 +40,7 @@ public class GenForestMelynchBigTree extends WorldGenerator {
 				}
 			}
 		}
-		
+
 		for (int i = -1; i < 1; i++) {
 			for (int j = 0; j < size; j++) {
 				for (int k = -1; k < 1; k++) {
@@ -63,16 +66,13 @@ public class GenForestMelynchBigTree extends WorldGenerator {
 						&& !worldIn.getBlockState(position.add(i, 0, j)).isFullBlock() && rand.nextInt(5) == 0) {
 					worldIn.setBlockState(position.add(i, 0, j), LEAVES.getDefaultState());
 				}
-				
+
 				if (worldIn.getBlockState(position.add(i, -1, j)).isFullBlock() && rand.nextInt(5) == 0) {
 					worldIn.setBlockState(position.add(i, -1, j), LOG.getDefaultState());
 				}
-				
 
 			}
 		}
-		
-		
 
 		generateLeavesNode(worldIn, rand, position.add(-1, 3, -1));
 
@@ -80,34 +80,34 @@ public class GenForestMelynchBigTree extends WorldGenerator {
 	}
 
 	private void generateLeavesNode(World worldIn, Random rand, BlockPos pos) {
-		
-			int leavesHeight = 8;
 
-			if (size - leavesHeight >= leavesHeight - 3) {
-				leavesHeight += 2;
-			}
+		int leavesHeight = 8;
 
-			for (int y = pos.getY() - leavesHeight + size; y <= pos.getY() + size; ++y) {
-				int leaveNum = y - (pos.getY() + size);
-				int leaveRange = 1 - leaveNum / (leavesHeight / 2 - 1);
+		if (size - leavesHeight >= leavesHeight - 3) {
+			leavesHeight += 2;
+		}
 
-				for (int x = pos.getX() - leaveRange + 1; x <= pos.getX() + leaveRange; ++x) {
-					for (int z = pos.getZ() - leaveRange + 1; z <= pos.getZ() + leaveRange; ++z) {
-						if (Math.abs(x - pos.getX()) != leaveRange || Math.abs(z - pos.getZ()) != leaveRange
-								|| rand.nextInt(2) != 0 && leaveNum != 0) {
-							BlockPos blockpos = new BlockPos(x, y, z);
-							IBlockState state = worldIn.getBlockState(blockpos);
-							Block block = state.getBlock();
+		for (int y = pos.getY() - leavesHeight + size; y <= pos.getY() + size; ++y) {
+			int leaveNum = y - (pos.getY() + size);
+			int leaveRange = 1 - leaveNum / (leavesHeight / 2 - 1);
 
-							if ((block.isAir(state, worldIn, blockpos) || block.isLeaves(state, worldIn, blockpos)
-									|| state.getMaterial() == Material.VINE) && rand.nextInt(12) != 0) {
-								setBlockAndNotifyAdequately(worldIn, blockpos, LEAVES.getDefaultState());
-							}
+			for (int x = pos.getX() - leaveRange + 1; x <= pos.getX() + leaveRange; ++x) {
+				for (int z = pos.getZ() - leaveRange + 1; z <= pos.getZ() + leaveRange; ++z) {
+					if (Math.abs(x - pos.getX()) != leaveRange || Math.abs(z - pos.getZ()) != leaveRange
+							|| rand.nextInt(2) != 0 && leaveNum != 0) {
+						BlockPos blockpos = new BlockPos(x, y, z);
+						IBlockState state = worldIn.getBlockState(blockpos);
+						Block block = state.getBlock();
+
+						if ((block.isAir(state, worldIn, blockpos) || block.isLeaves(state, worldIn, blockpos)
+								|| state.getMaterial() == Material.VINE) && rand.nextInt(12) != 0) {
+							setBlockAndNotifyAdequately(worldIn, blockpos, LEAVES.getDefaultState());
 						}
 					}
 				}
 			}
-		
+		}
+
 	}
 
 }

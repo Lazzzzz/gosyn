@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "gosyn:blocks/spirit_bricks_smooth",
+        "top": "gosyn:blocks/spirit_bricks_smooth",
+        "side": "gosyn:blocks/spirit_bricks_smooth"
+    }
+}

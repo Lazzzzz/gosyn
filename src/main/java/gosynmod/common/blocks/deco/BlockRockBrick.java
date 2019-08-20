@@ -34,5 +34,5 @@ public class BlockRockBrick extends Block implements IHasModel{
 		Gosyn.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 		
 	}
-
+	
 }

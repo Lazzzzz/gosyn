@@ -26,7 +26,7 @@ public class BlockCaveGrass extends BlockBush implements IHasModel {
 	public BlockCaveGrass() {
 		setUnlocalizedName("cave_grass");
 		setRegistryName("cave_grass");
-		setCreativeTab(Gosyn.gosybblocktab);
+		setCreativeTab(Gosyn.gosynplantstab);
 		setSoundType(SoundType.PLANT);
 
 		BlockInit.BLOCKS.add(this);

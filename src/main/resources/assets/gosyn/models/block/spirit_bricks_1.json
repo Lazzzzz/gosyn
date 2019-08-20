@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "gosyn:blocks/spirit_bricks_smooth"
+   }
+}

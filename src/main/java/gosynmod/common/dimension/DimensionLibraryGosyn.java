@@ -31,7 +31,7 @@ public class DimensionLibraryGosyn extends WorldProvider {
 
 	@Override
 	public boolean canRespawnHere() {
-		return false;
+		return true;
 	}
 	
     public boolean isSurfaceWorld()

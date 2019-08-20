@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "gosyn/corrupted_moss",
-		"particle": "gosyn/corrupted_moss"
+		"0": "gosyn:blocks/plants/corrupted_moss",
+		"particle": "gosyn:blocks/plants/corrupted_moss"
 	},
 	"elements": [
 		{
