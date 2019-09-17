@@ -2,21 +2,26 @@ package gosynmod.common.world.gen;
 
 import java.util.Random;
 
+import gosynmod.common.init.BlockInit;
+import net.minecraft.block.state.pattern.BlockMatcher;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGenGosynOre implements IWorldGenerator {
 
-	private WorldGenerator ore_emcoel;
+	private WorldGenerator ore_emcoel, ore_aiguite;
 
 	public WorldGenGosynOre() {
-		// ore_overworld_purodes = new
-		// WorldGenMinable(BlockInit.ORE_OVERWORLD.getDefaultState().withProperty(BlockOre.VARIANT,
-		// EnumHandler.EnumType.PURODES),
+		ore_emcoel = new WorldGenMinable(BlockInit.ORE_EMCOEL.getDefaultState(), 12,
+				BlockMatcher.forBlock(BlockInit.ROCK));
+		ore_aiguite = new WorldGenMinable(BlockInit.ORE_AIGUITE.getDefaultState(), 8,
+				BlockMatcher.forBlock(BlockInit.ROCK));
 	}
 
 	@Override
@@ -25,7 +30,8 @@ public class WorldGenGosynOre implements IWorldGenerator {
 
 		switch (world.provider.getDimension()) {
 		case 130:
-			break;
+			runGenerator(ore_emcoel, world, random, chunkX, chunkZ, 30, 40, 256);
+			runGenerator(ore_aiguite, world, random, chunkX, chunkZ, 30, 40, 100);
 		}
 
 	}

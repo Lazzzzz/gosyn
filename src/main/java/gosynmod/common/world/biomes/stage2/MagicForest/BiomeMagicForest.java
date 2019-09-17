@@ -64,7 +64,7 @@ public class BiomeMagicForest extends BiomeStage2Base {
 	}
 	
 	private void generateDungeon(World worldIn, Random rand, BlockPos pos) {
-		if (rand.nextInt(700) == 0) {
+		if (rand.nextInt(250) == 0) {
 			boolean flag = true;
 
 			for (int i = -32; i < 48; i += 16) {

@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import gosynmod.common.blocks.tileEntity.BlockTileEntity;
 import gosynmod.common.init.BlockInit;
-import gosynmod.common.interfaces.IHasModel;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.World;
@@ -13,9 +12,10 @@ public class BlockSpiritCounter extends BlockTileEntity<TileEntitySpiritCounter>
 
 	public BlockSpiritCounter() {
 		super(Material.ROCK);
-		setUnlocalizedName("counter");
-		setRegistryName("counter");
+		setUnlocalizedName("spirit_game1");
+		setRegistryName("spirit_game1");
 		BlockInit.BLOCKS.add(this);
+		setBlockUnbreakable();
 	}
 
 	@Override

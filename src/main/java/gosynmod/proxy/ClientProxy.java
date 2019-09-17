@@ -1,5 +1,6 @@
 package gosynmod.proxy;
 
+import gosynmod.client.particles.ParticleLeaf;
 import gosynmod.client.particles.ParticlesVortex;
 import gosynmod.common.Reference;
 import gosynmod.common.interfaces.ParticleTypes;
@@ -56,7 +57,9 @@ public class ClientProxy extends CommonProxy {
 				case VORTEX:
 					particle = new ParticlesVortex(world, x, y, z, velX, velY, velZ);
 					break;
-
+				case FALLING_LEAF:
+					particle = new ParticleLeaf(world, x, y, z, velX, velY, velZ);
+					
 				}
 
 				if (particle != null) {

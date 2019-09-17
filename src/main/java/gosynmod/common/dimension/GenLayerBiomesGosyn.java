@@ -1,6 +1,7 @@
 package gosynmod.common.dimension;
 
 import gosynmod.common.init.BiomeInit;
+import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
@@ -17,10 +18,12 @@ public class GenLayerBiomesGosyn extends GenLayer {
 			//STAGE 2
 			BiomeInit.MAGIC_FOREST,
 			BiomeInit.MUSHROOOM,
-			BiomeInit.CORRUPTED,
+			BiomeInit.ROOT_FOREST,
 			
 			//STAGE 3
-			BiomeInit.DARK_FOREST 
+			BiomeInit.DARK_FOREST, 
+			
+			Biomes.RIVER
 			
 	};
 

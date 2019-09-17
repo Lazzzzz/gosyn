@@ -14,8 +14,8 @@ public class BlockOreEmcoel extends Block implements IHasModel{
 
 	public BlockOreEmcoel() {
 		super(Material.ROCK);
-		setUnlocalizedName("ore_emcoal");
-		setRegistryName("ore_emcoal");
+		setUnlocalizedName("ore_emcoel");
+		setRegistryName("ore_emcoel");
 		setCreativeTab(Gosyn.gosybblocktab);
 		
 		

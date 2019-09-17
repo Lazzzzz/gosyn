@@ -6,10 +6,17 @@ import java.util.List;
 import gosynmod.common.blocks.deco.BlockRockBrick;
 import gosynmod.common.blocks.deco.BlockCreseolBrick.BlockCreseolBrick;
 import gosynmod.common.blocks.deco.stairs.StairCreseolBrick;
+import gosynmod.common.blocks.deco.stairs.StairFortnestBrick;
+import gosynmod.common.blocks.deco.stairs.StairNestBlock;
 import gosynmod.common.blocks.deco.stairs.StairRockBrick;
 import gosynmod.common.blocks.deco.stairs.StairSpiritBrick;
+import gosynmod.common.blocks.dungeons.stage1.BlockCobWeb;
+import gosynmod.common.blocks.dungeons.stage1.BlockFortnestBrick;
+import gosynmod.common.blocks.dungeons.stage1.BlockFortnestBricksWalls;
+import gosynmod.common.blocks.dungeons.stage1.BlockNest;
 import gosynmod.common.blocks.dungeons.stage2.BlockJar;
 import gosynmod.common.blocks.dungeons.stage2.BlockSpiritDoor;
+import gosynmod.common.blocks.dungeons.stage2.BlockSpiritPad;
 import gosynmod.common.blocks.dungeons.stage2.SpiritDungeonBricks;
 import gosynmod.common.blocks.ground.BlockCreseolGrass;
 import gosynmod.common.blocks.ground.BlockDirt;
@@ -19,6 +26,8 @@ import gosynmod.common.blocks.ground.BlockMud;
 import gosynmod.common.blocks.ground.BlockRock;
 import gosynmod.common.blocks.miscs.portal.BlockGosynPortal;
 import gosynmod.common.blocks.miscs.portal.BlockPortalNull;
+import gosynmod.common.blocks.ore.BlockOreAiguite;
+import gosynmod.common.blocks.ore.BlockOreEmcoel;
 import gosynmod.common.blocks.plants.BlockCaveGrass;
 import gosynmod.common.blocks.plants.stage1.BlockDoubleTallGrass;
 import gosynmod.common.blocks.plants.stage1.BlockFallenLeaves;
@@ -51,14 +60,13 @@ import gosynmod.common.blocks.tree.BlockMelynchLeaves;
 import gosynmod.common.blocks.tree.BlockMelynchPlanks;
 import gosynmod.common.blocks.tree.BlockMushrooomStem;
 import gosynmod.common.blocks.tree.mushrooomCap.BlockMushrooomCap;
+import gosynmod.common.blocks.utils.BlockGosynMultiBlock;
 import net.minecraft.block.Block;
 
 public class BlockInit {
 	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
 	//BLOCKS
-	
-	public static final Block TEST = new BlockMagicalMushrooom();
 	
 	public static final Block ROCK   		 = new BlockRock();
 	public static final Block DIRT  		 = new BlockDirt();
@@ -82,6 +90,17 @@ public class BlockInit {
 	public static final Block CRESEOLBRICK	 = new BlockCreseolBrick();
 	public static final Block SPIRITBRICK	 = new SpiritDungeonBricks();
 	public static final Block SPIRITDOOR	 = new BlockSpiritDoor();
+	public static final Block SPIRIT_PAD     = new BlockSpiritPad();
+	
+	public static final Block FORTNEST_BRICK = new BlockFortnestBrick();
+	public static final Block FORTNEST_WALLS = new BlockFortnestBricksWalls();
+	public static final Block COB_WEB		 = new BlockCobWeb();
+	public static final Block NEST_BLOCK	 = new BlockNest();
+	
+	
+	//ORE
+	public static final Block ORE_EMCOEL	 = new BlockOreEmcoel();
+	public static final Block ORE_AIGUITE	 = new BlockOreAiguite();
 	
 	//TILE 
 	public static final Block COUNTER = new BlockSpiritCounter();
@@ -91,6 +110,8 @@ public class BlockInit {
 	public static final Block ROCKBRICK_STAIR 	 = new StairRockBrick(); 
 	public static final Block CRESEOLBRICK_STAIR = new StairCreseolBrick();
 	public static final Block SPIRITBRICKS_STAIR = new StairSpiritBrick();
+	public static final Block NEST_STAIRS		 = new StairNestBlock();
+	public static final Block FORTNEST_STAIR	 = new StairFortnestBrick();
 	
 	//PLANTS
 	public static final Block SMALL_CATTAILS = new BlockSmallCattails();
@@ -116,4 +137,5 @@ public class BlockInit {
 	
 	public static final Block GOSYN_PORTAL	   = new BlockGosynPortal();
 	public static final Block GOSYN_PORTALNULL = new BlockPortalNull();
+	public static final Block GOSYN_MULTIBLOCK = new BlockGosynMultiBlock();
 }

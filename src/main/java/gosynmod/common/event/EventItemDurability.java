@@ -30,9 +30,9 @@ public class EventItemDurability {
 		EntityPlayer player = event.player;
 		if (!player.world.isRemote) {
 			if (player.dimension == ConfigHandler.DIMENSION_GOSYN_ID && player.ticksExisted % 20 == 0) {
-				
+
 				toolsDurabilityOffHand(player);
-				
+
 				for (int i = 0; i < 36; i++) {
 					ItemStack item = player.inventory.getStackInSlot(i);
 					// SWORD
@@ -53,8 +53,10 @@ public class EventItemDurability {
 							item.damageItem(rand.nextInt(ConfigHandler.MAX_DAMAGE_TOOLS), player);
 					}
 
-					// AXE
-					else if (item.getItem() instanceof ItemTool && !(item.getItem() instanceof ToolsGosynAxe)) {
+					else if (item.getItem() instanceof ItemTool && !(item.getItem() instanceof ToolsGosynAxe)
+							&& !(item.getItem() instanceof ToolsGosynSword)
+							&& !(item.getItem() instanceof ToolsGosynShovel)
+							&& !(item.getItem() instanceof ToolsGosynPickaxe)) {
 						if (rand.nextBoolean())
 							item.damageItem(rand.nextInt(ConfigHandler.MAX_DAMAGE_TOOLS), player);
 					}
@@ -93,7 +95,7 @@ public class EventItemDurability {
 
 		}
 	}
-	
+
 	private static void toolsDurabilityOffHand(EntityPlayer player) {
 		ItemStack item = player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
 		// SWORD
@@ -104,6 +106,7 @@ public class EventItemDurability {
 
 		// PICKAXE
 		else if (item.getItem() instanceof ItemPickaxe && !(item.getItem() instanceof ToolsGosynPickaxe)) {
+			// System.out.println("done");
 			if (rand.nextBoolean())
 				item.damageItem(rand.nextInt(ConfigHandler.MAX_DAMAGE_TOOLS), player);
 		}
@@ -114,8 +117,9 @@ public class EventItemDurability {
 				item.damageItem(rand.nextInt(ConfigHandler.MAX_DAMAGE_TOOLS), player);
 		}
 
-		// AXE
-		else if (item.getItem() instanceof ItemTool && !(item.getItem() instanceof ToolsGosynAxe)) {
+		else if (item.getItem() instanceof ItemTool && !(item.getItem() instanceof ToolsGosynAxe)
+				&& !(item.getItem() instanceof ToolsGosynSword) && !(item.getItem() instanceof ToolsGosynShovel)
+				&& !(item.getItem() instanceof ToolsGosynPickaxe)) {
 			if (rand.nextBoolean())
 				item.damageItem(rand.nextInt(ConfigHandler.MAX_DAMAGE_TOOLS), player);
 		}

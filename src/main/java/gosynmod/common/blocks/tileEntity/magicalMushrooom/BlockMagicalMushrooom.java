@@ -4,7 +4,6 @@ import javax.annotation.Nullable;
 
 import gosynmod.common.Gosyn;
 import gosynmod.common.blocks.tileEntity.BlockTileEntity;
-import gosynmod.common.blocks.tileEntity.counter.TileEntitySpiritCounter;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;

@@ -9,6 +9,7 @@ import gosynmod.common.init.DimensionInit;
 import gosynmod.common.init.EntityInit;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
+import gosynmod.common.world.gen.WorldGenGosynOre;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler {
@@ -60,7 +62,7 @@ public class RegistryHandler {
 
 	public static void preInitRegistries(FMLPreInitializationEvent event) {
 
-		//GameRegistry.registerWorldGenerator(new GenStructureStage2(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenGosynOre(), 0);
 
 		BiomeInit.registerBiomes();
 		DimensionInit.registerDimensions();

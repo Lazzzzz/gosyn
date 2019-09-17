@@ -1,11 +1,13 @@
 package gosynmod.common.blocks.tree;
 
 import java.util.List;
+import java.util.Random;
 
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
+import gosynmod.common.interfaces.ParticleTypes;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
@@ -21,6 +23,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockMelynchLeaves extends BlockLeaves implements IHasModel {
 	public static String type;
@@ -53,6 +57,19 @@ public class BlockMelynchLeaves extends BlockLeaves implements IHasModel {
 		if (!((Boolean) state.getValue(CHECK_DECAY)).booleanValue())
 			i |= 4;
 		return i;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+
+		if (rand.nextInt(30) == 0) {
+			if (worldIn.getBlockState(pos.down()) == Blocks.AIR.getDefaultState()) {
+				double x = rand.nextDouble();
+				double z = rand.nextDouble();
+				Gosyn.proxy.spawnParticle(worldIn, ParticleTypes.FALLING_LEAF, pos.getX() + x, pos.getY(),
+						pos.getZ() + z, 0.05f, -0.1f, 0);
+			}
+		}
 	}
 
 	@Override

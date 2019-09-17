@@ -6,6 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraftforge.client.IRenderHandler;
 
 public class DimensionLibraryGosyn extends WorldProvider {
 
@@ -38,7 +39,22 @@ public class DimensionLibraryGosyn extends WorldProvider {
     {
     	return true;
     }
+    
+    
+    @Override
+    public float getStarBrightness(float par1) {
+    	return 1F;
+    }
+    
+    @Override
+    public float calculateCelestialAngle(long worldTime, float partialTicks) {
+    	return 0.5f;
+    }
 
+    @Override
+    public IRenderHandler getSkyRenderer() {
+    	return super.getSkyRenderer();
+    }
     
     @Override
     public float getCloudHeight() {

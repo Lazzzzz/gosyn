@@ -6,14 +6,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class GenStructurePlace {
+public class GetStructurePos {
 	int sizeX;
 	int sizeZ;
 	BlockPos pos;
 	IBlockState TOP;
 	IBlockState FILLER;
 
-	public GenStructurePlace(BlockPos pos, int sizeX, int sizeZ) {
+	public GetStructurePos(BlockPos pos, int sizeX, int sizeZ) {
 		this.pos = pos;
 		this.sizeX = sizeX;
 		this.sizeZ = sizeZ;

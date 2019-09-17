@@ -5,7 +5,6 @@ import java.util.Random;
 import gosynmod.common.Reference;
 import gosynmod.common.init.BlockInit;
 import gosynmod.common.interfaces.IStructure;
-import gosynmod.common.util.jar.GenStructurePlace;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
@@ -37,38 +36,19 @@ public class GenSpiritDungeon extends WorldGenerator implements IStructure {
 	private boolean checkForSawn(Template template, World world, BlockPos pos) {
 		boolean flag = true;
 
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				BlockPos down = pos.add(i, -1, j);
-				if (world.getBlockState(down).isFullBlock() == false)
-					return false;
-			}
-
-		}
-
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				for (int k = 3; k < 5; k++) {
-					BlockPos top = pos.add(i, k, j);
-					if (world.getBlockState(top) == world.getBiome(top).fillerBlock)
-						return false;
-					if (world.getBlockState(top) == world.getBiome(top).topBlock)
-						return false;
-
-				}
-
-			}
-		}
-
-		for (int i = 0; i < sizeX + 1; i++) {
-			for (int j = 0; j < sizeZ + 1; j++) {
-				BlockPos down = pos.add(i, -1, j);
-				if (world.getBlockState(down).isFullBlock() == false)
-					return false;
-			}
-
-		}
-
+		BlockPos down = pos.add(0, -1, 0);
+		if (world.getBlockState(down).isFullBlock() == false)
+			return false;
+		down = pos.add(0, -1, sizeZ);
+		if (world.getBlockState(down).isFullBlock() == false)
+			return false;
+		down = pos.add(sizeX, -1, sizeZ);
+		if (world.getBlockState(down).isFullBlock() == false)
+			return false;
+		down = pos.add(sizeX, -1, 0);
+		if (world.getBlockState(down).isFullBlock() == false)
+			return false;
+		
 		for (int i = 0; i < sizeX + 1; i++) {
 			for (int j = 0; j < sizeZ + 1; j++) {
 				for (int k = 3; k < 5; k++) {
@@ -113,7 +93,7 @@ public class GenSpiritDungeon extends WorldGenerator implements IStructure {
 
 		for (int i = 0; i < 29; i++) {
 			for (int j = 0; j < 29; j++) {
-				if (world.getBlockState(pos.add(i, 0, j)) == Blocks.AIR.getDefaultState()) {
+				if (!world.getBlockState(pos.add(i, 0, j)).isFullBlock()) {
 					world.setBlockState(pos.add(i, 0, j), TOP);
 				}
 			}
@@ -140,11 +120,12 @@ public class GenSpiritDungeon extends WorldGenerator implements IStructure {
 					} else if (world.getBlockState(p) == BlockInit.LOOTJAR.getDefaultState()) {
 						if (rand.nextBoolean())
 							world.setBlockToAir(p);
-						
+
 					} else if (world.getBlockState(p).getBlock() == Blocks.CHEST) {
 						if (rand.nextBoolean())
 							world.setBlockToAir(p);
-				}}
+					}
+				}
 			}
 		}
 	}

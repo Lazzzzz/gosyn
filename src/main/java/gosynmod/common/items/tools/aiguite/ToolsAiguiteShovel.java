@@ -4,9 +4,10 @@ import gosynmod.common.Gosyn;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.init.ToolsTypeInit;
 import gosynmod.common.interfaces.IHasModel;
+import gosynmod.common.items.tools.base.ToolsGosynShovel;
 import net.minecraft.item.ItemSpade;
 
-public class ToolsAiguiteShovel extends ItemSpade implements IHasModel
+public class ToolsAiguiteShovel extends ToolsGosynShovel implements IHasModel
 {
 	public ToolsAiguiteShovel() 
 	{

@@ -5,6 +5,11 @@ import java.util.Random;
 import gosynmod.common.Gosyn;
 import gosynmod.common.init.ItemInit;
 import gosynmod.common.interfaces.IHasModel;
+import gosynmod.common.world.gen.stage1.structures.FortnestMazePlacer;
+import gosynmod.common.world.gen.stage1.structures.MazeGenerator;
+import gosynmod.common.world.gen.stage1.structures.part.FortnestConnector;
+import gosynmod.common.world.gen.stage1.structures.part.FortnestCoridorX;
+import gosynmod.common.world.gen.stage1.structures.part.FortnestCoridorZ;
 import gosynmod.common.world.gen.stage2.structures.GenSpiritDungeon;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -34,7 +39,8 @@ public class ItemDebug extends Item implements IHasModel {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 
 		if (!worldIn.isRemote) {
-			new GenSpiritDungeon().generate(worldIn, new Random(), playerIn.getPosition());
+			
+			new FortnestMazePlacer().generateMaze(worldIn, playerIn.getPosition());
 		}
 
 		return super.onItemRightClick(worldIn, playerIn, handIn);
